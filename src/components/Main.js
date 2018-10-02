@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import NewsFeed from './NewsFeed';
 import Settings from './Settings';
+import  Head from './Header';
 
-import { SafeAreaView, ScrollView, View, Image, Dimensions } from 'react-native';
+import { SafeAreaView, ScrollView } from 'react-native';
 import { createDrawerNavigator, DrawerItems } from 'react-navigation';
 
 export default class Main extends Component {
@@ -14,7 +15,7 @@ export default class Main extends Component {
 }
 // const {width} = Dimensions.get('window');
 const CustomDrawerComponent = (props) => (
-  <SafeAreaView style={{ flex: 1, backgroundColor:'#8993c1' }}>
+  <SafeAreaView style={{ flex: 1, backgroundColor: '#8993c1' }}>
     <ScrollView>
       <DrawerItems {...props} />
     </ScrollView>
@@ -26,9 +27,10 @@ const AppDrawerNavigator = createDrawerNavigator({
 }, {
     contentComponent: CustomDrawerComponent,
     drawerWidth: 250,
-    contentOptions:{
+    contentOptions: {
       activeTintColor: '#fff',
-      activeBackgroundColor:'#3f51b5'
+      activeBackgroundColor: '#3f51b5'
     }
-  }
+  },
+  
 )
