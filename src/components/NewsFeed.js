@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { FlatList, View } from 'react-native';
 import NewsCard from './NewsCard';
 import Head from './Header';
+import { Icon } from 'native-base';
 
 const url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=6ca34c820cce443f9ae46a62aef41555";
 
@@ -36,11 +37,17 @@ export default class NewsFeed extends Component {
     );
   }
 
+  static navigationOptions = {
+    drawerIcon : ({tintColor}) => (
+      <Icon name="paper" style={{ fontSize:24, color: tintColor }} />
+    )
+  }
+
   render() {
     return (
       <View>
         <Head 
-        headerTitle="News"
+        headerTitle="News Feed"
         onPressAction = {() => this.props.navigation.openDrawer()}
         IconName = 'menu'
         />

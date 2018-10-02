@@ -14,10 +14,7 @@ export default class Main extends Component {
 }
 // const {width} = Dimensions.get('window');
 const CustomDrawerComponent = (props) => (
-  <SafeAreaView style={{ flex: 1 }}>
-  <View style={{ height:150, backgroundColor:'#000', alignItems:'center', justifyContent:'center' }}>
-    <Image source={{uri: 'https://i.stack.imgur.com/ILTQq.png'}} style={{height:120, width:120}}/>
-  </View>
+  <SafeAreaView style={{ flex: 1, backgroundColor:'#8993c1' }}>
     <ScrollView>
       <DrawerItems {...props} />
     </ScrollView>
@@ -28,6 +25,10 @@ const AppDrawerNavigator = createDrawerNavigator({
   Settings: Settings
 }, {
     contentComponent: CustomDrawerComponent,
-    drawerWidth: 250
+    drawerWidth: 250,
+    contentOptions:{
+      activeTintColor: '#fff',
+      activeBackgroundColor:'#3f51b5'
+    }
   }
 )

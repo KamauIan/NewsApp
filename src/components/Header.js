@@ -13,7 +13,7 @@ export default class Head extends Component  {
           </Button>
         </Left>
         <Body>
-          <Title style={{ width: "75%" }}>{this.props.headerTitle}</Title>
+          <Title>{this.props.headerTitle}</Title>
         </Body>
         <Right>
           <Button transparent>
