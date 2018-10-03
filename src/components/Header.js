@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Header, Body, Title, Right, Button, Icon, Left } from 'native-base'
+import { Header, Body, Title, Right, Button, Icon, Left } from 'native-base';
+import { withNavigation } from 'react-navigation';
 
-export default class Head extends Component  {
+class Head extends Component  {
   render() {
-    // const {headerTitle, RightIconName} = this.props.Head
     return (
       <Header>
         <Left>
-          <Button transparent onPress={this.props.onPressAction}>
-            <Icon name={this.props.IconName}
+          <Button transparent onPress={() => this.props.navigation.openDrawer()} >
+            <Icon name={this.props.IconName} 
             />
           </Button>
         </Left>
@@ -23,5 +23,6 @@ export default class Head extends Component  {
       </Header>
     );
   }
-
 }
+
+export default withNavigation(Head)
