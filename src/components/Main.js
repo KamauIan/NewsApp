@@ -5,6 +5,7 @@ import  Head from './Header';
 
 import { SafeAreaView, ScrollView } from 'react-native';
 import { createDrawerNavigator, DrawerItems } from 'react-navigation';
+import TechNews from './TechNews';
 
 export default class Main extends Component {
   render() {
@@ -23,7 +24,8 @@ const CustomDrawerComponent = (props) => (
 )
 const AppDrawerNavigator = createDrawerNavigator({
   NewsFeed: NewsFeed,
-  Settings: Settings
+  Settings: Settings,
+  TechNews: TechNews
 }, {
     contentComponent: CustomDrawerComponent,
     drawerWidth: 250,

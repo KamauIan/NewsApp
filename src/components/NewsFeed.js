@@ -4,14 +4,12 @@ import NewsCard from './NewsCard';
 import Head from './Header';
 import { Icon } from 'native-base';
 import NewsDetail from './NewsDetail';
+import TechNews from './TechNews';
 import { createStackNavigator } from 'react-navigation';
 
 const url = "https://newsapi.org/v2/everything?q=Kenya&apiKey=6ca34c820cce443f9ae46a62aef41555";
 
 class NewsFeeds extends Component {
-
-
-
   constructor(props) {
     super(props);
     this.state = { articles: [], refreshing: true };                //initialize states
@@ -40,8 +38,12 @@ class NewsFeeds extends Component {
       () => this.fetchNews()
     );
   }
-
-  
+  static navigationOptions = {
+    header: <Head
+      headerTitle="News Feed"
+      IconName="menu"
+    />
+  }
   render() {
     return (
       <FlatList
@@ -67,9 +69,7 @@ class NewsFeeds extends Component {
 }
 
 export default class NewsFeed extends Component {
-  constructor(props){
-    super(props)
-  }
+  
   render() {
     return (<RootStack />)
   }
@@ -79,13 +79,7 @@ const RootStack = createStackNavigator(
   {
     NewsFeeds: NewsFeeds,
     NewsDetail: NewsDetail,
-  },
-  {
-    navigationOptions: {
-      header: <Head headerTitle="News Feed"
-      onPressAction={() => this.props.navigation.openDrawer()}
-      IconName='menu'/>
-    }
+    TechNews: TechNews
   },
   {
     initialRouteName: 'NewsFeeds',

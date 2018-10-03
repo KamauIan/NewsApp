@@ -14,10 +14,10 @@ export default class NewsCard extends Component {
     const defaultImg = 'https://www.euractiv.com/wp-content/uploads/sites/2/2014/03/news-default.jpeg';
     return (
       <Card style={{ flex: 0 }}>
-        <CardItem header>
+        <CardItem bordered header>
           <Text>{title}</Text>
         </CardItem>
-        <CardItem>
+        <CardItem bordered>
           <Body>
             <Image source={{ uri: urlToImage || defaultImg }} style={{ resizeMode: "stretch", height: 200, width: '100%', flex: 1 }} />
             <Text>
@@ -37,7 +37,7 @@ export default class NewsCard extends Component {
           <Right>
             <Button transparent 
             textStyle={{ color: '#87838B' }}>
-              <Icon name="home" />
+              <Icon name="time" />
               <Text note>{publishedAt}</Text>
             </Button>
           </Right>
