@@ -40,7 +40,7 @@ class NewsFeeds extends Component {
   }
   static navigationOptions = {
     header: <Head
-      headerTitle="News Feed"
+      headerTitle="News"
       IconName="menu"
     />
   }

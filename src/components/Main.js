@@ -24,8 +24,8 @@ const CustomDrawerComponent = (props) => (
 )
 const AppDrawerNavigator = createDrawerNavigator({
   NewsFeed: NewsFeed,
+  TechNews: TechNews,
   Settings: Settings,
-  TechNews: TechNews
 }, {
     contentComponent: CustomDrawerComponent,
     drawerWidth: 250,

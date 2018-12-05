@@ -53,7 +53,7 @@ export default class NewsDetail extends Component {
               <Body>
                 <Image source={{ uri: urlToImage }} style={{ height: 200, width: 500, flex: 1 }} />
                 <Text>
-                  {content}
+                  {content.slice(0, -13)}
                 </Text>
               </Body>
             </CardItem>
@@ -63,9 +63,6 @@ export default class NewsDetail extends Component {
                   <Icon name="eye" />
                   <Text>View more in Website</Text>
                 </Button>
-                <Button
-                  onPress={() => this.props.navigation.goBack()}
-                ><Text>Back</Text></Button>
               </Left>
             </CardItem>
           </Card>
